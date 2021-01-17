@@ -70,7 +70,7 @@ class EditEmployerComponent extends Component {
     changePasswordHandler = (event) => {
         this.setState({ password: event.target.value });
     }
-
+//Branch
     render() {
         return (
             <div>
