@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //new proj made here
+//new
 class CreateEmployerComponent extends Component {
     constructor(props) {
         super(props);
