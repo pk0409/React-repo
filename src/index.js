@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter,Route,Switch } from 'react-router-dom';
+import EmployerSignIn from './Components/EmployerSignIn';
+import HomePage from './Components/HomePage';
+
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+   <BrowserRouter>
+  {/* <switch> */}
+  <Route exact path='/' component={HomePage}/>
+   <Route exact path='/EmployerSignIn' component={EmployerSignIn}/>
+  {/* <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>, */}
+  {/* </switch> */}
+   </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -1,37 +1,31 @@
 .App {
   text-align: center;
 }
-.searchformfld{
-  position: relative;
-  margin: 5px 0px;
-}
-.searchformfld label{
-  position: absolute;
-  padding-left: 10px;
-  top:15px;
-  cursor: text;
 
-}
-.searchformfld input:focus + label,.searchformfld input:not(:placeholder-shown) + label{
-  opacity:1;
-  transform: scale(.9) translateY(-100%) translateX(-10px);
-  color:#000;
-}
-.searchformfld input:focus{
-  border:1px solid #000;
-  outline-color: #000;
-}
-.searchformfld{
-  padding: 15px;
-  margin:15px 0px;
-}
-.searchformfld input{
-  width:100%;
-  padding-left: 10px;
-}
-.searchformfld label,.searchformfld input{
-  transition: all 0.2s;
-  transition-timing-function: ease;
-  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+.form-control-primary{
+  margin:10px;
   opacity:0.5;
+  border-radius:10px;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 70px 0 0 10px;
+  border-right: 1px solid #ec3b3b;
+  background-color: rgb(20, 71, 95);
+}
+
+.sidebar-left{
+  position: sticky;
+  top:0;
+  height: calc(100vh- 50px);
+}
+
+.sidebar-nav li.nav-link{
+  color: rgb(48, 10, 10);
+  font-weight: 5000;
 }
