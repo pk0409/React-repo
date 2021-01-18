@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import JobSeekerService from '../Services/JobSeekerService';
 
-class ApplyAJob extends Component {
+class AddToFavourite extends Component {
     constructor(props) {
         super(props);
         this.state = {
-                appliedJob_id:'',
+                favJob_id:'',
                 jobId:'',
                 jobSeekerId:''
         }
         this.changeJobIdHandler= this.changeJobIdHandler.bind(this);
         this.changeJobSeekerIdHandler= this.changeJobSeekerIdHandler.bind(this);
-        this.saveAppliedJob = this.saveAppliedJob.bind(this);
+        this.saveFavouriteJob = this.saveFavouriteJob.bind(this);
     }     
 
-    saveAppliedJob = (e)=>{
+    saveFavouriteJob = (e)=>{
         e.preventDefault();
         let job ={jobId: this.state.jobId, jobSeekerId: this.state.jobSeekerId };
+        console.log(job);
         console.log(JSON.stringify(job));
-        JobSeekerService.applyAJob(job).then((res) => {
+        JobSeekerService.addToFavourite(job).then((res) => {
             this.props.history.push("/get-jobs");
         });
         
@@ -41,13 +42,13 @@ class ApplyAJob extends Component {
                 <div className="container">
                     <div className="row">
                         <div>
-                            <h3 className="text-center">Apply A Job</h3>
+                            <h3 className="text-center">Add To Favourite</h3>
                             <div>
                                 <form className="form">
                                     <div className="form-control"> 
                                         
                                         <input placeholder="Job Id" name="jobId"
-                                            value = {this.state.jobId} 
+                                        value = {this.state.jobId} 
                                             onChange = {this.changeJobIdHandler}/>
                                     </div>
                                     <div className="form-control"> 
@@ -57,7 +58,7 @@ class ApplyAJob extends Component {
                                             onChange = {this.changeJobSeekerIdHandler}/>
                                     </div>
                                    
-                                    <button className = "btn btn-success" onClick = {this.saveAppliedJob}>Save</button>
+                                    <button className = "btn btn-success" onClick = {this.saveFavouriteJob}>Save</button>
                                     <button className = "btn btn-danger" onClick = {this.cancel.bind(this)}>Cancel</button>
                                 </form>
                             </div>
@@ -72,4 +73,4 @@ class ApplyAJob extends Component {
 
 
 
-export default ApplyAJob;
+export default AddToFavourite;
